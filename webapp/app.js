@@ -1,6 +1,19 @@
 var ipc = require('ipc');
 var $ = require('./jquery.js');
+var connected_timeout; 
+function connected(){
+    $("#status-light").removeClass("status-not-connected").addClass("status-connected");
+}
+function disconnected(){
+    $("#status-light").removeClass("status-connected").addClass("status-not-connected");
+}
 function batteryStatusUpdate(data) {
+    connected();
+    if(connected_timeout)
+    {
+        window.clearTimeout(connected_timeout);
+    }
+    window.setTimeout(disconnected, 15000);
     $("#battery-indicator-text").html(data + '%');
     var newClass = '';
     if (data > 80) {
