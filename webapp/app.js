@@ -49,7 +49,11 @@ function changeMood(mood){
 window.onload = function() {
     $(document).ready(function() {
         ipc.on('battery-status-update', batteryStatusUpdate);
+<<<<<<< Updated upstream
         ipc.on('mood-update', changeMood);
         audiolib.playTestAudio();
+=======
+        ipc.on('change-mood', changeMood);
+>>>>>>> Stashed changes
     });
 };
