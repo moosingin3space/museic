@@ -18,6 +18,7 @@ app.on('ready', function() {
         'auto-hide-menu-bar': true
     });
 
+    muselib.runServer();
     mainWindow.loadUrl('file://' + __dirname + '/webapp/index.html');
 
     mainWindow.on('closed', function() {
