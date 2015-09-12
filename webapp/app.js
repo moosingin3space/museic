@@ -14,7 +14,7 @@ function batteryStatusUpdate(data) {
     {
         window.clearTimeout(connected_timeout);
     }
-    window.setTimeout(disconnected, 15000);
+    connected_timeout = window.setTimeout(disconnected, 15000);
     $("#battery-indicator-text").html(data + '%');
     var newClass = '';
     if (data > 80) {
@@ -29,6 +29,11 @@ function batteryStatusUpdate(data) {
     $("#battery-indicator-icon").
         removeClass('fa-battery-4 fa-battery-3 fa-battery-2 fa-battery-1').
         addClass(newClass);
+}
+
+function changeMood(mood){
+    var m = $('#mood-display').attr('class');
+    $('#mood-display').removeClass(m).addClass('mood-transition');
 }
 
 window.onload = function() {
