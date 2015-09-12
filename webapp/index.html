@@ -13,7 +13,8 @@
         <a class="pure-menu-heading" href="">Museic</a>
         <ul class="pure-menu-list">
           <li class="pure-menu-item">
-            <i class="indicator fa fa-battery-4"></i>
+            <i id="battery-indicator-icon" class="indicator fa fa-battery-4"></i>
+            <span id="battery-indicator-text" class="indicator">100%</span>
           </li>
           <li class="pure-menu-item">
             <div id="status-light" class="indicator status-not-connected"></div>
@@ -28,5 +29,9 @@
         </div>
       </div>
     </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="audio.js"></script>
   </body>
 </html>
