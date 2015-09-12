@@ -1,6 +1,7 @@
 var ipc = require('ipc');
 var $ = require('jquery');
 var audiolib = require('./audio.js');
+var api = require('./api.js');
 require('jquery-ui');
 
 var connected_timeout;
@@ -48,7 +49,7 @@ function changeMood(mood){
 window.onload = function() {
     $(document).ready(function() {
         ipc.on('battery-status-update', batteryStatusUpdate);
-        ipc.on('change-mood', changeMood);
+        ipc.on('mood-update', changeMood);
         audiolib.playTestAudio();
     });
 };
