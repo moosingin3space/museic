@@ -27,3 +27,25 @@
 .mood-excited {
     background-image: url('mood-excited.jpg');
 }
+
+#status-light {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    margin-top: 5px;
+    margin-right: 4px;
+}
+
+.status-not-connected {
+    background-color: #ff0000;
+}
+
+.status-connected {
+    background-color: #00ff00;
+}
+
+.indicator {
+    color: #fff;
+    margin-top: 5px;
+    margin-right: 4px;
+}

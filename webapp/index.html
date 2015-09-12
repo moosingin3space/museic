@@ -3,6 +3,7 @@
   <head>
     <title>Museic</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css"></link>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"></link>
     <link rel="stylesheet" href="layout.css"></link>
     <link rel="stylesheet" href="styles.css"></link>
   </head>
@@ -10,12 +11,19 @@
     <div class="header">
       <div class="app-header pure-menu pure-menu-horizontal pure-menu-fixed">
         <a class="pure-menu-heading" href="">Museic</a>
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item">
+            <i class="indicator fa fa-battery-4"></i>
+          </li>
+          <li class="pure-menu-item">
+            <div id="status-light" class="status-not-connected"></div>
+          </li>
+        </ul>
       </div>
     </div>
 
     <div class="content-wrapper">
       <div class="content">
-        <p>Muse Status: <span id="muse-status">Not connected</span></p>
         <div id="mood-display" class="mood mood-neutral">
         </div>
       </div>
