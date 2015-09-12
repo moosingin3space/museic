@@ -1,0 +1,28 @@
+.app-header {
+    background-color: #2d3e50;
+}
+
+.app-header > .pure-menu-heading {
+    color: #fff;
+}
+
+#mood-display {
+    width: 100%;
+    height: 450px;
+}
+
+.mood {
+    background-size: 100% 450px;
+}
+
+.mood-relaxed {
+    background-image: url('mood-relaxed.jpg');
+}
+
+.mood-neutral {
+    background-image: url('mood-neutral.jpg');
+}
+
+.mood-excited {
+    background-image: url('mood-excited.jpg');
+}

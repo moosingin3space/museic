@@ -13,7 +13,9 @@ app.on('window-all-closed', function() {
 app.on('ready', function() {
     mainWindow = new BrowserWindow({
         width: 1024,
-        height: 768
+        height: 768,
+        title: 'Museic',
+        'auto-hide-menu-bar': true
     });
 
     mainWindow.loadUrl('file://' + __dirname + '/webapp/index.html');

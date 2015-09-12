@@ -1,0 +1,10 @@
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.content-wrapper {
+    padding-top: 20px;
+    width: 100%;
+    height: 100%;
+}
