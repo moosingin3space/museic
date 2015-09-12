@@ -12,3 +12,7 @@ html, body {
 .app-header > .pure-menu-list {
     float: right;
 }
+
+.content {
+    height: 100%;
+}
