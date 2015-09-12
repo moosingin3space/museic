@@ -4,6 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
+    "app": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/moosingin3space/museic/issues"
   },
-  "homepage": "https://github.com/moosingin3space/museic#readme"
+  "homepage": "https://github.com/moosingin3space/museic#readme",
+  "dependencies": {
+    "electron-prebuilt": "^0.32.1"
+  }
 }
