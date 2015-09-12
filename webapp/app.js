@@ -31,8 +31,8 @@ function batteryStatusUpdate(data) {
 }
 
 function changeMood(mood){
-    console.log($('#mood-display').attr('class'));
-    $('#mood-display').toggleClass('light', 250).toggleClass('dark', 250);
+    var m = $('#mood-display').attr('class');
+    $('#mood-display').removeClass(m).addClass('mood-transition');
 }
 
 window.onload = function() {
