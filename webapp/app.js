@@ -1,7 +1,7 @@
 var ipc = require('ipc');
 var $ = require('./jquery.js');
 function batteryStatusUpdate(data) {
-    $("#battery-indicator-text").html(data);
+    $("#battery-indicator-text").html(data + '%');
     var newClass = '';
     if (data > 80) {
         newClass = 'fa-battery-4';

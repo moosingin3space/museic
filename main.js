@@ -20,6 +20,7 @@ app.on('ready', function() {
 
     mainWindow.loadUrl('file://' + __dirname + '/webapp/index.html');
     muselib.runServer(mainWindow.webContents);
+
     mainWindow.on('closed', function() {
         mainWindow = null;
     });
