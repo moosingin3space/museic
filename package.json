@@ -19,6 +19,8 @@
   "homepage": "https://github.com/moosingin3space/museic#readme",
   "dependencies": {
     "electron-prebuilt": "^0.32.1",
+    "jquery": "^2.1.4",
+    "jquery-ui": "^1.10.5",
     "node-osc": "^1.1.0"
   }
 }

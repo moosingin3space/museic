@@ -1,6 +1,7 @@
 var ipc = require('ipc');
-var $ = require('./jquery.js');
-var connected_timeout; 
+var $ = require('jquery');
+require('jquery-ui');
+var connected_timeout;
 function connected(){
     $("#status-light").removeClass("status-not-connected").addClass("status-connected");
 }
