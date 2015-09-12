@@ -1,4 +1,5 @@
 var ipc = require('ipc');
+var $ = require('./jquery.js');
 function batteryStatusUpdate(data) {
     $("#battery-indicator-text").html(data);
     var newClass = '';
@@ -16,7 +17,8 @@ function batteryStatusUpdate(data) {
         addClass(newClass);
 }
 
-
-$(document).ready(function() {
-    ipc.on('battery-status-update', batteryStatusUpdate);
-});
+window.onload = function() {
+    $(document).ready(function() {
+        ipc.on('battery-status-update', batteryStatusUpdate);
+    });
+};
