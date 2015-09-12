@@ -21,6 +21,7 @@
 
 .mood-neutral {
     background-image: url('mood-neutral.jpg');
+    background-repeat: round no-repeat;
 }
 
 .mood-excited {
