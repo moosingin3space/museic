@@ -44,16 +44,12 @@ function changeMood(mood){
     ensure_connected();
     var m = $('#mood-display').attr('class');
     $('#mood-display').removeClass(m).addClass('mood-' + mood);
+    api.fetch_next_songs(function(data){ audiolib.playFromURL(data[mood]); });
 }
 
 window.onload = function() {
     $(document).ready(function() {
         ipc.on('battery-status-update', batteryStatusUpdate);
-<<<<<<< Updated upstream
         ipc.on('mood-update', changeMood);
-        audiolib.playTestAudio();
-=======
-        ipc.on('change-mood', changeMood);
->>>>>>> Stashed changes
     });
 };
