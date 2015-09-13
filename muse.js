@@ -2,8 +2,8 @@ var osc = require('node-osc');
 var EventEmitter = require('events');
 var EventCombiner = require('./event-combiner.js');
 var Neutral = {
-    Min: 1,
-    Max: 2
+    Min: 1.1,
+    Max: 1.9
 };
 
 function calcavg(msg)
@@ -61,13 +61,13 @@ function runServer(webContents) {
     }
 
     setTimeout(function sendMessage() {
-        if (numExcited > numRelaxed && numExcited > numNeutral) {
+        if (numExcited > numRelaxed && numExcited > 20) {
             webContents.send('mood-update', 'excited');
         }
-        if (numRelaxed > numExcited && numRelaxed > numNeutral) {
+        else if (numRelaxed > numExcited && numRelaxed > 20) {
             webContents.send('mood-update', 'relaxed');
         }
-        if (numNeutral > numRelaxed && numNeutral > numExcited) {
+        else {
             webContents.send('mood-update', 'neutral');
         }
 
