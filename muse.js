@@ -3,7 +3,7 @@ var EventEmitter = require('events');
 var EventCombiner = require('./event-combiner.js');
 var Neutral = {
     Min: 1.1,
-    Max: 1.9
+    Max: 1.5
 };
 
 function calcavg(msg)
@@ -26,6 +26,7 @@ function calcavg(msg)
 function runServer(webContents) {
     var App = new EventEmitter();
     var array = [0,0,0,0,0,0,0,0,0,0];
+    var mostRecent = 0;
     var numNeutral = 0;
     var numExcited = 0;
     var numRelaxed = 0;
@@ -43,12 +44,13 @@ function runServer(webContents) {
             arraysum += array[i];
         }
         var avg = arraysum/array.length;
-        if(avg > Neutral.Max)
+        console.log(avg);
+        if(avg > (mostRecent+0.02))
         {
             console.log('excited');
             numExcited++;
         }
-        else if(avg < Neutral.Min)
+        else if(avg < (mostRecent-0.02))
         {
             console.log('relaxed');
             numRelaxed++;
@@ -58,13 +60,14 @@ function runServer(webContents) {
             console.log('neutral');
             numNeutral++;
         }
+        mostRecent = avg;
     }
 
     setTimeout(function sendMessage() {
-        if (numExcited > numRelaxed && numExcited > 20) {
+        if (numExcited > numRelaxed && numExcited > 10) {
             webContents.send('mood-update', 'excited');
         }
-        else if (numRelaxed > numExcited && numRelaxed > 20) {
+        else if (numRelaxed > numExcited && numRelaxed > 10) {
             webContents.send('mood-update', 'relaxed');
         }
         else {
