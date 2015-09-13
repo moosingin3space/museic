@@ -42,9 +42,12 @@ function batteryStatusUpdate(data) {
 
 function changeMood(mood){
     ensure_connected();
-    var m = $('#mood-display').attr('class');
-    $('#mood-display').removeClass(m).addClass('mood-' + mood);
-    api.fetch_next_songs(function(data){ audiolib.playFromURL(data[mood]); });
+    
+    api.fetch_next_songs(function(data) { 
+        audiolib.playFromURL(data[mood]);
+        var m = $('#mood-display').attr('class');
+        $('#mood-display').removeClass(m).addClass('mood-' + mood); 
+    });
 }
 
 window.onload = function() {

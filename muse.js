@@ -42,18 +42,20 @@ function runServer(webContents) {
         {
             arraysum += array[i];
         }
-        console.log(arraysum/array.length);
         var avg = arraysum/array.length;
         if(avg > Neutral.Max)
         {
+            console.log('excited');
             numExcited++;
         }
         else if(avg < Neutral.Min)
         {
+            console.log('relaxed');
             numRelaxed++;
         }
         else
         {
+            console.log('neutral');
             numNeutral++;
         }
     }
@@ -73,8 +75,8 @@ function runServer(webContents) {
         numRelaxed = 0;
         numExcited = 0;
 
-        setTimeout(sendMessage, 15000);
-    }, 15000);
+        setTimeout(sendMessage, 5000);
+    }, 5000);
 
     EventCombiner.combineEvents(App, 'alpha_wave', 'beta_wave', record);
 
